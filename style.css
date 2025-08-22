@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Estilos comunes */
+body {
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: #1b5533;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    border-bottom: 3px solid #090d0f;
+}
+
+.header .logo img {
+    height: 100px;
+    transition: transform 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.1);
+}
+
+.header .nombre_iti h3, .header .nombre_iti h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.header .nombre_iti h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.header .nombre_iti h2 {
+    font-size: 18px;
+}
+
+.header .btn a {
+    display: inline-block;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.header .btn a:hover {
+    background-color: #e2f1f8;
+    color: #f5bf36;
+}
+
+.box-titulo {
+    text-align: center;
+    margin: 20px auto;
+    padding: 1%;
+    background-color: #578a5d;
+    color: #f8e9c3;
+    border: 2px solid #090d0f;
+}
+
+.box-central {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #090d0f;
+    border-radius: 20px;
+}
+
+.box-tec {
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 20px;
+    transition: transform 0.3s;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 30%;
+}
+
+.box-tec:hover {
+    transform: scale(1.05);
+}
+
+.img-tec img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.nom-tec h1 {
+    color: #1b5533;
+    margin: 10px 0;
+}
+
+/* Responsivo para escritorio */
+@media (min-width: 1000px) {
+    .box-central {
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .nombre_iti h3, .header .nombre_iti h2 {
+        font-size: 16px;
+    }
+
+    .box-titulo {
+        width: 90%;
+    }
+
+    .box-central {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-tec {
+        width: 90%;
+    }
+}

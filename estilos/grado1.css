@@ -1,0 +1,115 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.quiz-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.options {
+    margin-top: 10px;
+}
+
+label {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Botones de navegación */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.previous, .next, .submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 30%; /* Establecer un ancho específico para separar los botones */
+    margin: 0 10px; /* Espacio entre los botones */
+}
+
+/* Hover */
+.previous:hover, .next:hover, .submit:hover {
+    background-color: #45a049;
+}
+
+/* Desactivar los botones */
+.submit {
+    display: block;
+    margin: 20px auto; /* Centra el botón de enviar */
+    width: 50%; /* Establecer un ancho para el botón de enviar */
+}
+
+.previous, .next {
+    display: inline-block; /* Mantener "Anterior" y "Siguiente" en una línea */
+}
+
+.previous:disabled, .next:disabled, .submit:disabled {
+    pointer-events: none; /* Desactiva la interacción con el botón */
+    opacity: 0.5; /* Da un aspecto inactivo */
+}
+
+
+/* Botón de enviar */
+.submit {
+    background-color: #4CAF50;
+    color: white;
+  border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+
+}
+
+
+
+.submit:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para las imágenes */
+img {
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}

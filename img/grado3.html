@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Primer Grado - Áreas de Conocimiento</title>
+    <link rel="stylesheet" href="pruebas.css">
+    <script>
+        let currentSection = 0;
+
+        function showSection(index) {
+            const sections = document.querySelectorAll('.section');
+            const previousButton = document.querySelector('.previous');
+            const nextButton = document.querySelector('.next');
+            const submitButton = document.querySelector('.submit');
+
+            sections.forEach((section, idx) => {
+                if (idx === index) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            // Mostrar/ocultar los botones según la sección
+            if (index === 0) {
+                previousButton.style.display = 'none';  // Ocultar "Anterior" en la primera sección
+            } else {
+                previousButton.style.display = 'inline-block'; // Mostrar "Anterior" en las siguientes
+            }
+
+            if (index === sections.length - 1) {
+                nextButton.style.display = 'none';  // Ocultar "Siguiente" en la última sección
+                submitButton.style.display = 'inline-block'; // Mostrar el botón de "Enviar"
+            } else {
+                nextButton.style.display = 'inline-block'; // Mostrar "Siguiente"
+                submitButton.style.display = 'none'; // Ocultar el botón de "Enviar" en las demás secciones
+            }
+        }
+
+        function nextSection() {
+            const sections = document.querySelectorAll('.section');
+            if (currentSection < sections.length - 1) {
+                currentSection++;
+                showSection(currentSection);
+            }
+        }
+
+        function previousSection() {
+            if (currentSection > 0) {
+                currentSection--;
+                showSection(currentSection);
+            }
+        }
+
+        function confirmSubmission(event) {
+            const confirmation = confirm("¿Está seguro de que desea enviar sus respuestas?");
+            if (!confirmation) {
+                event.preventDefault();  // Si el usuario cancela, evitar el envío del formulario
+            }
+        }
+
+        // Inicializar la prueba mostrando la primera sección
+        window.onload = () => {
+            showSection(currentSection);
+        };
+    </script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Prueba de Primer Grado - Áreas de Conocimiento</h1>
+        <form action="resultado.html" method="post">
+
+            <!-- Sección de Matemáticas -->
+            <div class="section">
+                <h2>Matemáticas</h2>
+
+                <!-- Pregunta 1 -->
+                <div class="question">
+                    <p>1. ¿Cuántas manzanas hay en total?</p>
+                    <img src="grafico_manzanas1.png" alt="Gráfico de manzanas" class="question-image">
+                    <div class="options">
+                        <label><input type="radio" name="question1" value="a"> 3</label>
+                        <label><input type="radio" name="question1" value="b"> 4</label>
+                        <label><input type="radio" name="question1" value="c"> 5</label>
+                        <label><input type="radio" name="question1" value="d"> 6</label>
+                    </div>
+                </div>
+
+                <!-- Resto de preguntas de Matemáticas con gráficos -->
+
+            </div>
+
+            <!-- Sección de Español -->
+            <div class="section" style="display: none;">
+                <h2>Español</h2>
+
+                <!-- Pregunta 1 -->
+                <div class="question">
+                    <h3>1. ¿Cuál de estas palabras está escrita correctamente?</h3>
+                    <img src="grafico_ortografia.png" alt="Gráfico de ortografía" class="question-image">
+                    <div class="options">
+                        <input type="radio" id="p3_op1" name="pregunta3" value="casa">
+                        <label for="p3_op1">Casa</label>
+                        <input type="radio" id="p3_op2" name="pregunta3" value="kasa">
+                        <label for="p3_op2">Kasa</label>
+                        <input type="radio" id="p3_op3" name="pregunta3" value="katha">
+                        <label for="p3_op3">Katha</label>
+                    </div>
+                </div>
+
+                <!-- Más preguntas de Español con sus gráficos -->
+
+            </div>
+
+            <!-- Sección de Ciencias -->
+            <div class="section" style="display: none;">
+                <h2>Ciencias</h2>
+
+                <!-- Pregunta 1 -->
+                <div class="question">
+                    <h3>1. ¿Cuál es el órgano encargado de bombear la sangre?</h3>
+                    <img src="grafico_corazon.png" alt="Gráfico del corazón" class="question-image">
+                    <div class="options">
+                        <input type="radio" id="p5_op1" name="pregunta5" value="corazon">
+                        <label for="p5_op1">Corazón</label>
+                        <input type="radio" id="p5_op2" name="pregunta5" value="estomago">
+                        <label for="p5_op2">Estómago</label>
+                        <input type="radio" id="p5_op3" name="pregunta5" value="pulmones">
+                        <label for="p5_op3">Pulmones</label>
+                    </div>
+                </div>
+
+                <!-- Más preguntas de Ciencias con sus gráficos -->
+
+            </div>
+<br><br>
+            <!-- Botones de Navegación -->
+            <div class="navigation">
+                <button type="button" class="previous" onclick="previousSection()">Anterior</button>
+                <br><br>
+                <button type="button" class="next" onclick="nextSection()">Siguiente</button>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <button type="submit" class="submit" style="display: none;" onclick="confirmSubmission(event)">Enviar Respuestas</button>
+
+        </form>
+    </div>
+</body>
+</html>

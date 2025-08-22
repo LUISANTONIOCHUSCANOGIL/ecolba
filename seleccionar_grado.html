@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Grado y Preguntas</title>
+    <link rel="stylesheet" href="../--/estilos/pruebas.css>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="title">Selecciona tu Grado</h1>
+
+        <form id="gradoForm">
+            <div class="input-group">
+                <label for="grado">Seleccionar Grado</label>
+                <select id="grado" name="grado" onchange="redireccionarPagina()">
+                    <option value="">Selecciona un grado</option>
+                    <option value="grado1">Primero</option>
+                    <option value="grado2">Segundo</option>
+                    <option value="grado3">Tercero</option>
+                    <option value="grado4">Cuarto</option>
+                    <option value="grado5">Quinto</option>
+                    <option value="grado6">Sexto</option>
+                    <option value="grado7">Séptimo</option>
+                    <option value="grado8">Octavo</option>
+                    <option value="grado9">Noveno</option>
+                    <option value="grado10">Décimo</option>
+                    <option value="grado11">Undécimo</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function redireccionarPagina() {
+            var gradoSeleccionado = document.getElementById("grado").value;
+            if (gradoSeleccionado) {
+                // Redirigir según el grado seleccionado
+                window.location.href = gradoSeleccionado + ".html";
+            } else {
+                alert("Por favor selecciona un grado.");
+            }
+        }
+    </script>
+</body>
+</html>
